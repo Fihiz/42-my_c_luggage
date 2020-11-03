@@ -6,7 +6,7 @@
 #    By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/24 14:55:27 by sad-aude          #+#    #+#              #
-#    Updated: 2020/07/30 14:10:14 by sad-aude         ###   ########lyon.fr    #
+#    Updated: 2020/10/29 21:32:32 by sad-aude         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS	=	ft_memset.c \
 			ft_memmove.c \
 			ft_memchr.c \
 			ft_memcmp.c \
+			ft_memdel.c \
 			ft_strlen.c \
 			ft_isalpha.c \
 			ft_isdigit.c \
@@ -32,6 +33,7 @@ SRCS	=	ft_memset.c \
 			ft_strrchr.c \
 			ft_strncmp.c \
 			ft_strlcpy.c \
+			ft_strcpy.c \
 			ft_strlcat.c \
 			ft_calloc.c \
 			ft_strnstr.c \

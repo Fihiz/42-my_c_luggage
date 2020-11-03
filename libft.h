@@ -6,7 +6,7 @@
 /*   By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:07:14 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/05/28 01:13:42 by sad-aude         ###   ########lyon.fr   */
+/*   Updated: 2020/10/29 21:33:09 by sad-aude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int				ft_strichr(char *str, char c);
 char			*ft_strrchr(const char *s, int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+char			*ft_strcpy(char *dest, char *src);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 int				ft_atoi(const char *str);
 char			*ft_strnstr(const char *haystack, const char *needle,

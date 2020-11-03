@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 15:02:14 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/10/29 20:12:55 by user42           ###   ########lyon.fr   */
+/*   Created: 2020/10/29 21:31:50 by sad-aude          #+#    #+#             */
+/*   Updated: 2020/10/29 21:35:00 by sad-aude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-	char	*dest;
-	int		i;
+	int i;
 
-	i = -1;
-	if (!(dest = malloc(sizeof(char) * (ft_strlen(src) + 1))))
-		return (NULL);
-	while (src[++i])
+	i = 0;
+	while (src[i] != '\0')
+	{
 		dest[i] = src[i];
+		i++;
+	}
 	dest[i] = '\0';
 	return (dest);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 23:19:16 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/07/29 18:32:03 by sad-aude         ###   ########lyon.fr   */
+/*   Updated: 2020/10/27 16:06:50 by user42           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	int		ft_countwords(char const *s, char sep)
 	{
 		if (s[0] != sep && i == 0)
 			count++;
-		if (s[i] != sep && s[i - 1] == sep)
+		if (s[i] != sep && i > 0 && s[i - 1] == sep)
 			count++;
 		i++;
 	}

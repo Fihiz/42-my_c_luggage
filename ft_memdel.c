@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 15:02:14 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/10/29 20:12:55 by user42           ###   ########lyon.fr   */
+/*   Created: 2020/10/27 16:37:04 by user42            #+#    #+#             */
+/*   Updated: 2020/10/29 20:54:51 by sad-aude         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+void			ft_memdel(void **str)
 {
-	char	*dest;
-	int		i;
-
-	i = -1;
-	if (!(dest = malloc(sizeof(char) * (ft_strlen(src) + 1))))
-		return (NULL);
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	free(*str);
+	*str = NULL;
 }
