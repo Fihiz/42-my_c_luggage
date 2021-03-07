@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 23:19:16 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/10/27 16:06:50 by user42           ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 23:09:42 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_countwords(char const *s, char sep)
+static	int		words_counter(char const *s, char sep)
 {
 	int	i;
 	int	count;
@@ -30,7 +30,7 @@ static	int		ft_countwords(char const *s, char sep)
 	return (count);
 }
 
-static	char	*ft_malloc(char const *s, char sep)
+static	char	*word_mallocator(char const *s, char sep)
 {
 	char	*word;
 	int		i;
@@ -69,7 +69,7 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	ind = 0;
-	if (!s || (!(dest = malloc(sizeof(char *) * (ft_countwords(s, c) + 1)))))
+	if (!s || (!(dest = malloc(sizeof(char *) * (words_counter(s, c) + 1)))))
 		return (NULL);
 	while (s[i])
 	{
@@ -77,7 +77,7 @@ char			**ft_split(char const *s, char c)
 			i++;
 		if (s[i] && s[i] != c)
 		{
-			if (!(dest[ind] = ft_malloc(s + i, c)))
+			if (!(dest[ind] = word_mallocator(s + i, c)))
 				return (ft_free(dest));
 			++ind;
 			while (s[i] && s[i] != c)
