@@ -6,7 +6,7 @@
 #    By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/24 14:55:27 by sad-aude          #+#    #+#              #
-#    Updated: 2021/03/11 14:16:44 by salome           ###   ########lyon.fr    #
+#    Updated: 2021/03/11 14:41:57 by salome           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ BLUE = \033[34m
 CYAN = \033[36m
 PURPLE = \033[35m
 RED = \033[31m
+HIDDEN = \033[2m
+ITALIC = \033[3m
 
 NAME	=	libft.a
 CC		=	gcc
@@ -96,14 +98,14 @@ BONUSSRCS	=	ft_lst/ft_lstnew_bonus.c \
 OBJS	=	$(SRCS:.c=.o)
 OBJS_BONUS	=	$(BONUSSRCS:.c=.o)
 
-all:	$(NAME)
+all:	draw $(NAME)
 
 $(NAME):	$(OBJS) $(HEADER)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "$(BLUE)\nC LIBFT $(GREEN)\tREADY FOR USE$(NORMAL)"
 
 %.o: %.c $(HEADER)
-	@echo "$(BLUE)COMPILATION $(GREY)\t"$<
+	@echo "$(BLUE)$(HIDDEN)COMPILATION $(NORMAL)$(GREY)\t"$<
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:	$(OBJS) $(OBJS_BONUS)
@@ -119,3 +121,14 @@ fclean:		clean
 	@echo "$(BLUE)C LIBFT $(GREEN)\tALL HAS BEEN CLEANED $(NORMAL)"
 
 re: fclean all
+
+draw:
+	@printf "\n"
+	@printf "$(BLUE)                    _/        _/  _/            _/_/    _/      \n"
+	@printf "$(BLUE)                   _/            _/_/_/      _/      _/_/_/_/   \n"
+	@printf "$(BLUE)                  _/        _/  _/    _/  _/_/_/_/    _/        \n"
+	@printf "$(BLUE)                 _/        _/  _/    _/    _/        _/         \n"
+	@printf "$(BLUE)                _/_/_/_/  _/  _/_/_/      _/          _/_/      \n"
+	@printf "\n"
+	@printf "$(HIDDEN)$(ITALIC)\t\t\t\t\t\t\t sad-aude\n"
+	@printf "$(NORMAL)																\n"
