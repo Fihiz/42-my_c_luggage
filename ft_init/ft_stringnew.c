@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strichr.c                                       :+:      :+:    :+:   */
+/*   ft_stringnew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sad-aude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 15:08:48 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/02/24 15:14:12 by sad-aude         ###   ########lyon.fr   */
+/*   Created: 2020/02/24 15:01:28 by sad-aude          #+#    #+#             */
+/*   Updated: 2021/03/11 13:08:55 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int		ft_strichr(char *str, char c)
+void	*ft_stringnew(int size)
 {
-	int i;
+	char	*tab;
+	int		index;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (i);
-		i++;
-	}
-	return (-1);
+	if (!(tab = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	index = 0;
+	while (index <= size)
+		tab[index++] = '\0';
+	return (tab);
 }

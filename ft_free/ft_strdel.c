@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:03:59 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/05/29 01:29:47 by sad-aude         ###   ########lyon.fr   */
+/*   Updated: 2021/03/11 13:08:33 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_substr(char *s, unsigned int start, size_t len, int id)
+void	ft_strdel(char **str)
 {
-	char	*sub;
-	size_t	i;
-
-	i = 0;
-	if (s == 0 || !(sub = malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	if (start >= ft_strlen(s))
-		len = 0;
-	while (s[start] && len--)
-		sub[i++] = s[start++];
-	sub[i] = '\0';
-	if (id == 1 && s)
+	if (str)
 	{
-		free(s);
-		s = NULL;
+		free(*str);
+		*str = NULL;
 	}
-	return (sub);
 }

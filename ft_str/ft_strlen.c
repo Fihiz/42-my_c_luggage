@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sad-aude <sad-aude@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 15:03:59 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/05/29 01:30:18 by sad-aude         ###   ########lyon.fr   */
+/*   Created: 2020/02/24 15:02:45 by sad-aude          #+#    #+#             */
+/*   Updated: 2021/03/11 13:10:04 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_strdel(char **str)
+size_t		ft_strlen(const char *s)
 {
-	if (str)
-	{
-		free(*str);
-		*str = NULL;
-	}
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

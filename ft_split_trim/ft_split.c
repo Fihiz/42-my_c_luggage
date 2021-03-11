@@ -6,11 +6,11 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/22 23:19:16 by sad-aude          #+#    #+#             */
-/*   Updated: 2021/03/06 23:09:42 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/03/11 13:09:17 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static	int		words_counter(char const *s, char sep)
 {

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 22:48:10 by salome            #+#    #+#             */
-/*   Updated: 2021/03/06 22:48:30 by salome           ###   ########lyon.fr   */
+/*   Created: 2020/02/24 15:03:46 by sad-aude          #+#    #+#             */
+/*   Updated: 2021/03/11 13:09:21 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	*ft_realloc(void *ptr, size_t new_size, size_t old_size)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*newptr;
+	size_t	start;
+	size_t	end;
 
-	if (!(newptr = ft_calloc(new_size, sizeof(unsigned char))))
-		return (NULL);
-	if (ptr)
-	{
-		if (old_size > new_size)
-			old_size = new_size;
-		ft_memcpy(newptr, ptr, old_size);
-		free(ptr);
-		ptr = NULL;
-	}
-	return (newptr);
+	if (s1 == 0 || set == 0)
+		return (0);
+	start = 0;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	if (start == end)
+		return (ft_calloc(start, end));
+	end--;
+	while (s1[end] && ft_strchr(set, s1[end]))
+		end--;
+	return (ft_substr((char*)s1, start, end - start + 1, 0));
 }

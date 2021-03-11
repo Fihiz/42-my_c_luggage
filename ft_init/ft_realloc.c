@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 22:47:52 by salome            #+#    #+#             */
-/*   Updated: 2021/03/06 22:47:56 by salome           ###   ########lyon.fr   */
+/*   Created: 2021/03/06 22:48:10 by salome            #+#    #+#             */
+/*   Updated: 2021/03/11 13:08:51 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void	*ft_realloc(void *ptr, size_t new_size, size_t old_size)
 {
-	int	i;
+	char	*newptr;
 
-	i = 0;
-	while (s1[i] == s2[i])
+	if (!(newptr = ft_calloc(new_size, sizeof(unsigned char))))
+		return (NULL);
+	if (ptr)
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
-		i++;
+		if (old_size > new_size)
+			old_size = new_size;
+		ft_memcpy(newptr, ptr, old_size);
+		free(ptr);
+		ptr = NULL;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (newptr);
 }

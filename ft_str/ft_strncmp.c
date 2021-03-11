@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sad-aude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 14:56:16 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/02/24 14:56:19 by sad-aude         ###   ########lyon.fr   */
+/*   Created: 2020/07/23 19:06:36 by sad-aude          #+#    #+#             */
+/*   Updated: 2021/03/11 13:10:13 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	void	*tab;
-	size_t	stock;
+	size_t	i;
 
-	stock = count * size;
-	if (!(tab = malloc(stock)))
-		return (NULL);
-	ft_bzero(tab, stock);
-	return (tab);
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
+		i++;
+	return ((i == n) ? 0 : ((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sad-aude <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 15:02:45 by sad-aude          #+#    #+#             */
-/*   Updated: 2020/02/24 15:02:47 by sad-aude         ###   ########lyon.fr   */
+/*   Created: 2020/02/24 14:56:16 by sad-aude          #+#    #+#             */
+/*   Updated: 2021/03/11 13:08:47 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t		ft_strlen(const char *s)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	len;
+	void	*tab;
+	size_t	stock;
 
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	stock = count * size;
+	if (!(tab = malloc(stock)))
+		return (NULL);
+	ft_bzero(tab, stock);
+	return (tab);
 }
