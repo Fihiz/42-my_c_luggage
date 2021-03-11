@@ -6,11 +6,23 @@
 #    By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/24 14:55:27 by sad-aude          #+#    #+#              #
-#    Updated: 2021/03/11 13:07:45 by salome           ###   ########lyon.fr    #
+#    Updated: 2021/03/11 14:16:44 by salome           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
+NORMAL= \033[0m
+GREY = \033[90m
+GREEN = \033[32m
+YELLOW = \033[33m
+BLUE = \033[34m
+CYAN = \033[36m
+PURPLE = \033[35m
+RED = \033[31m
+
 NAME	=	libft.a
+CC		=	gcc
+CFLAGS	=	-Wall -Wextra -Werror
+HEADER	=	libft.h
 
 SRCS	=	ft_ascii/ft_isalnum.c \
 			ft_ascii/ft_isalpha.c \
@@ -82,30 +94,28 @@ BONUSSRCS	=	ft_lst/ft_lstnew_bonus.c \
 				ft_lst/ft_lstmap_bonus.c
 
 OBJS	=	$(SRCS:.c=.o)
-
 OBJS_BONUS	=	$(BONUSSRCS:.c=.o)
-
-CC		=	gcc
-
-CFLAGS	=	-Wall -Wextra -Werror
-
-HEADER	=	libft.h
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS) $(HEADER)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "$(BLUE)\nC LIBFT $(GREEN)\tREADY FOR USE$(NORMAL)"
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(BLUE)COMPILATION $(GREY)\t"$<
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:	$(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS)
+	@echo "$(BLUE)\nC LIBFT $(GREY)\t.O DELETION $(NORMAL)"
+	@rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean:		clean
-	rm -f $(NAME)
+	@echo "$(BLUE)C LIBFT $(GREY)\t.A DELETION $(NORMAL)"
+	@rm -f $(NAME)
+	@echo "$(BLUE)C LIBFT $(GREEN)\tALL HAS BEEN CLEANED $(NORMAL)"
 
 re: fclean all
