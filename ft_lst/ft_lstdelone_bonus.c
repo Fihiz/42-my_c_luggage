@@ -6,7 +6,7 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 14:58:44 by sad-aude          #+#    #+#             */
-/*   Updated: 2021/03/06 22:55:31 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 21:38:07 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	if (!lst || !del)
 		return ;
 	del(lst->content);
-	free(lst->next);
+	free(lst);
 	lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:03:59 by sad-aude          #+#    #+#             */
-/*   Updated: 2021/03/11 13:10:45 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 22:48:24 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len, int id)
 	size_t	i;
 
 	i = 0;
-	if (s == 0 || !(sub = malloc(sizeof(char) * (len + 1))))
+	if (!s || !(sub = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	if (start >= ft_strlen(s))
 		len = 0;

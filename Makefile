@@ -6,7 +6,7 @@
 #    By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/24 14:55:27 by sad-aude          #+#    #+#              #
-#    Updated: 2021/03/11 14:41:57 by salome           ###   ########lyon.fr    #
+#    Updated: 2021/04/28 22:46:26 by salome           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,6 @@ SRCS	=	ft_ascii/ft_isalnum.c \
 			ft_put/ft_putstr_fd.c \
 			ft_split_trim/ft_split.c \
 			ft_split_trim/ft_strtrim.c \
-			get_next_line/get_next_line.c \
 			ft_str/ft_strcmp.c \
 			ft_str/ft_strjoin.c \
 			ft_str/ft_strlcat.c \
@@ -83,7 +82,8 @@ SRCS	=	ft_ascii/ft_isalnum.c \
 			ft_strchr/ft_strichr.c \
 			ft_strchr/ft_strrchr.c \
 			ft_sub/ft_strnstr.c \
-			ft_sub/ft_substr.c
+			ft_sub/ft_substr.c \
+			get_next_line/get_next_line.c
 
 BONUSSRCS	=	ft_lst/ft_lstnew_bonus.c \
 				ft_lst/ft_lstadd_front_bonus.c \

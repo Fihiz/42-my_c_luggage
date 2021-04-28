@@ -6,7 +6,7 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:02:22 by sad-aude          #+#    #+#             */
-/*   Updated: 2021/03/11 13:09:54 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 22:48:01 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strjoin(char *s1, char *s2, int id)
 	i = -1;
 	ind = -1;
 	len = ft_strlen(s1);
-	if (s1 == 0 || !(concat = malloc(sizeof(char) * (len + ft_strlen(s2) + 1))))
+	if (!s1 || !(concat = malloc(sizeof(char) * (len + ft_strlen(s2) + 1))))
 		return (NULL);
 	while (++i < len)
 		concat[i] = s1[i];

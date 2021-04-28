@@ -6,7 +6,7 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:03:46 by sad-aude          #+#    #+#             */
-/*   Updated: 2021/03/11 13:09:21 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 22:43:33 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
-	if (s1 == 0 || set == 0)
+	if (!s1 || !set)
 		return (0);
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))

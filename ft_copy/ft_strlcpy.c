@@ -6,7 +6,7 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:02:38 by sad-aude          #+#    #+#             */
-/*   Updated: 2021/03/11 13:08:08 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 21:54:27 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	i = -1;
-	if (src == 0)
+	if (!src)
 		return (0);
 	if (size == 0)
 		return (ft_strlen(src));

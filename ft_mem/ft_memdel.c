@@ -6,7 +6,7 @@
 /*   By: salome <salome@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 16:37:04 by user42            #+#    #+#             */
-/*   Updated: 2021/03/06 22:56:34 by salome           ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 22:37:29 by salome           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void			ft_memdel(void **str)
 {
-	free(*str);
-	*str = NULL;
+	if (str)
+	{
+		free(*str);
+		*str = NULL;
+	}
 }
